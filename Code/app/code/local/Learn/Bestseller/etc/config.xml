@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Learn_Bestseller>
+            <version>1.0.0</version>
+        </Learn_Bestseller>
+    </modules>
+    
+    <frontend>
+		<layout>
+			<updates>
+				<bestseller>
+					<file>learn/bestseller.xml</file>
+				</bestseller>
+			</updates>
+		</layout>
+	</frontend>
+    
+    <global>
+		<blocks>
+            <bestseller>
+                <class>Learn_Bestseller_Block</class>
+            </bestseller>
+        </blocks>
+		
+		<helpers>
+			<bestseller>
+				<class>Learn_Bestseller_Helper</class>
+			</bestseller>
+		</helpers>
+		<models>
+			<bestseller>
+				<class>Learn_Bestseller_Model</class>
+			</bestseller>
+		</models>
+    </global>
+    
+	<default>
+        <!-- Best Seller Products Default Value -->
+		<bestseller_tab>
+			<bestseller_setting>
+				<bestseller_active>1</bestseller_active>
+				<bestseller_position>2</bestseller_position>
+				<bestseller_title>Best Selling Products</bestseller_title>
+				<bestseller_display_count>2</bestseller_display_count>
+			</bestseller_setting>
+		</bestseller_tab>
+        <!-- Most Viewed Products Default Value -->
+		<mostviewed_tab>
+			<mostviewed_setting>
+				<mostviewed_active>1</mostviewed_active>
+				<mostviewed_position>1</mostviewed_position>
+				<mostviewed_title>Most Viewed products</mostviewed_title>
+				<mostviewed_display_count>4</mostviewed_display_count>
+			</mostviewed_setting>
+		</mostviewed_tab>
+	</default>
+</config>

@@ -1,0 +1,32 @@
+<?php 
+$helper = Mage::helper('bestseller/mostviewed');
+$limit = $helper->mostviewed_display_count();
+$_products =  $this->getMostviewedItems($limit);
+?>
+
+<?php if ($_products): ?>
+<div class="block block-list block-viewed">
+    <div class="block-title">
+        <strong><span><?php echo $helper->mostviewed_title();?></span></strong>
+    </div>
+    <div class="block-content">
+        <ol id="mostviewed-products-items" class="mini-products-list">
+        <?php foreach ($_products as $_item): ?>
+            <li class="item">
+                <a href="<?php echo $this->getProductUrl($_item) ?>">
+                    <span class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_item, 'thumbnail')->resize(50, 50)->setWatermarkSize('30x10'); ?>" width="50" height="50" alt="<?php echo $this->escapeHtml($this->getProductName()) ?>" /></span>
+                </a>
+                <div class="product-details">
+                    <p class="product-name">
+                        <a href="<?php echo $this->getProductUrl($_item) ?>">
+                            <?php echo $this->helper('catalog/output')->productAttribute($_item, $_item->getName() , 'name') ?>
+                        </a>
+                    </p>
+                </div>
+            </li>
+        <?php endforeach; ?>
+        </ol>
+        <script type="text/javascript">decorateList('mostviewed-products-items');</script>
+    </div>
+</div>
+<?php endif; ?>

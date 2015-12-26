@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+        <!-- Right Side -->
+        <reference name="right">
+            <!-- Best Seller Produts Right Side-->
+            <block type="bestseller/bestseller" name="bestseller_right" as="bestseller_right" after="-">
+				<action method="setTemplate" ifconfig="bestseller_tab/bestseller_setting/bestseller_active">
+					<template helper="bestseller/data/postion_right" />
+				</action>
+			</block>
+            
+            <!-- Most Viewed Produts Right Side -->
+            <block type="bestseller/mostviewed" name="mostviewed_right" as="mostviewed_right" after="-">
+				<action method="setTemplate" ifconfig="mostviewed_tab/mostviewed_setting/mostviewed_active">
+					<template helper="bestseller/mostviewed/postion_right" />
+				</action>
+			</block>
+            
+        </reference>
+        
+		<!-- Left Side -->
+		<reference name="left">
+            <!-- Best Seller Produts Left Side -->
+			<block type="bestseller/bestseller" name="bestseller_left" as="bestseller_left" after="-">
+				<action method="setTemplate" ifconfig="bestseller_tab/bestseller_setting/bestseller_active">
+					<template helper="bestseller/data/postion_left" />
+				</action>
+			</block>
+            
+            <!-- Most Viewed Produts Left Side -->
+            <block type="bestseller/mostviewed" name="mostviewed_left" as="mostviewed_left" after="-">
+				<action method="setTemplate" ifconfig="mostviewed_tab/mostviewed_setting/mostviewed_active">
+					<template helper="bestseller/mostviewed/postion_left" />
+				</action>
+			</block>
+		</reference>
+    </default>
+</layout>
